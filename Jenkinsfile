@@ -6,7 +6,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
-                    bat 'mvn clean'
+                    bash 'mvn clean'
                 }
             }
         }
@@ -15,7 +15,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
-                    bat 'mvn verify -Dcontext=firefox -Dwebdriver.driver=firefox'
+                    bash 'mvn verify -Dcontext=firefox -Dwebdriver.driver=firefox'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
-                    bat 'mvn verify -Dcontext=chrome -Dwebdriver.driver=chrome'
+                    bash 'mvn verify -Dcontext=chrome -Dwebdriver.driver=chrome'
                 }
             }
         }
